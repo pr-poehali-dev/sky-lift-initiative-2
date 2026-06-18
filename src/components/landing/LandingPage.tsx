@@ -22,6 +22,7 @@ const fade = {
 function AboutPage() {
   return (
     <motion.div {...fade} transition={{ duration: 0.5 }} className="max-w-5xl mx-auto w-full">
+      <Badge variant="outline" className="text-white border-white mb-6">Учебный проект</Badge>
       <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-8">О проекте</h2>
       <div className="grid md:grid-cols-2 gap-10 items-center">
         <div className="space-y-5">
@@ -118,7 +119,7 @@ export default function LandingPage() {
       <header className="fixed top-0 left-0 right-0 z-30 flex items-center justify-between px-6 md:px-12 h-20">
         <div className="flex items-center gap-2 text-white font-bold text-lg">
           <Icon name="Rocket" className="text-[#FF4D00]" size={22} />
-          <span>Учебного сайта</span>
+          <span>Учебный сайт</span>
         </div>
         <nav className="flex gap-1 md:gap-2">
           {pages.map((page, index) => (
