@@ -24,21 +24,10 @@ function AboutPage() {
     <motion.div {...fade} transition={{ duration: 0.5 }} className="max-w-5xl mx-auto w-full">
       <Badge variant="outline" className="text-white border-white mb-6">Учебный проект</Badge>
       <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-8">О проекте</h2>
-      <div className="grid md:grid-cols-2 gap-10 items-center">
-        <div className="space-y-5">
-          {aboutText.map((p, i) => (
-            <p key={i} className="text-lg md:text-xl text-neutral-400 leading-relaxed">{p}</p>
-          ))}
-        </div>
-        <div className="relative rounded-2xl overflow-hidden border border-neutral-700 aspect-video">
-          <iframe
-            className="w-full h-full"
-            src={videoUrl}
-            title="Видео о проекте"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </div>
+      <div className="space-y-5">
+        {aboutText.map((p, i) => (
+          <p key={i} className="text-lg md:text-xl text-neutral-400 leading-relaxed">{p}</p>
+        ))}
       </div>
     </motion.div>
   )
@@ -81,22 +70,36 @@ function GalleryPage() {
 
 function ListPage() {
   return (
-    <motion.div {...fade} transition={{ duration: 0.5 }} className="max-w-3xl mx-auto w-full">
+    <motion.div {...fade} transition={{ duration: 0.5 }} className="max-w-5xl mx-auto w-full">
       <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-8">Список возможностей</h2>
-      <ul className="space-y-4">
-        {listItems.map((item, i) => (
-          <motion.li
-            key={i}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4, delay: i * 0.08 }}
-            className="flex items-start gap-3 text-lg md:text-xl text-neutral-300"
-          >
-            <Icon name="Check" className="text-[#FF4D00] mt-1 shrink-0" size={24} />
-            <span>{item}</span>
-          </motion.li>
-        ))}
-      </ul>
+      <div className="grid md:grid-cols-2 gap-10 items-start">
+        <ul className="space-y-4">
+          {listItems.map((item, i) => (
+            <motion.li
+              key={i}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
+              className="flex items-start gap-3 text-lg md:text-xl text-neutral-300"
+            >
+              <Icon name="Check" className="text-[#FF4D00] mt-1 shrink-0" size={24} />
+              <span>{item}</span>
+            </motion.li>
+          ))}
+        </ul>
+        <div className="space-y-4">
+          <div className="relative rounded-2xl overflow-hidden border border-neutral-700 aspect-video">
+            <iframe
+              className="w-full h-full"
+              src={videoUrl}
+              title="Видео"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+          <p className="text-center text-neutral-400 text-lg italic">Встретимся снова</p>
+        </div>
+      </div>
     </motion.div>
   )
 }
