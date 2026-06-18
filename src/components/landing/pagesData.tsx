@@ -33,4 +33,4 @@ export const listItems = [
   'Чистый и понятный код проекта',
 ]
 
-export const videoUrl = 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+export const videoUrl = 'https://www.youtube.com/embed/DteyuzJxz9k'
