@@ -22,7 +22,6 @@ const fade = {
 function AboutPage() {
   return (
     <motion.div {...fade} transition={{ duration: 0.5 }} className="max-w-5xl mx-auto w-full">
-      <Badge variant="outline" className="text-white border-white mb-6">Учебный проект</Badge>
       <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-8">О проекте</h2>
       <div className="grid md:grid-cols-2 gap-10 items-center">
         <div className="space-y-5">
