@@ -71,7 +71,8 @@ function GalleryPage() {
 function ListPage() {
   return (
     <motion.div {...fade} transition={{ duration: 0.5 }} className="max-w-5xl mx-auto w-full">
-      <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-8">Список возможностей</h2>
+      <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-2">БАЗА</h2>
+      <p className="text-neutral-400 text-lg mb-8 italic">Без этого ты не студент</p>
       <div className="grid md:grid-cols-2 gap-10 items-start">
         <ul className="space-y-4">
           {listItems.map((item, i) => (
@@ -80,10 +81,13 @@ function ListPage() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="flex items-start gap-3 text-lg md:text-xl text-neutral-300"
+              className="flex items-start gap-3"
             >
-              <Icon name="Check" className="text-[#FF4D00] mt-1 shrink-0" size={24} />
-              <span>{item}</span>
+              <Icon name="Check" className="text-[#FF4D00] mt-1 shrink-0" size={22} />
+              <div>
+                <span className="text-white font-semibold text-base md:text-lg">{item.title}</span>
+                <p className="text-neutral-400 text-sm md:text-base">{item.desc}</p>
+              </div>
             </motion.li>
           ))}
         </ul>
