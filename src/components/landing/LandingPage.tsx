@@ -24,10 +24,17 @@ function AboutPage() {
     <motion.div {...fade} transition={{ duration: 0.5 }} className="max-w-5xl mx-auto w-full">
       <Badge variant="outline" className="text-white border-white mb-6">Учебный проект</Badge>
       <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-8">О проекте</h2>
-      <div className="space-y-5">
-        {aboutText.map((p, i) => (
-          <p key={i} className="text-lg md:text-xl text-neutral-400 leading-relaxed">{p}</p>
-        ))}
+      <div className="grid md:grid-cols-2 gap-10 items-center">
+        <div className="space-y-5">
+          {aboutText.map((p, i) => (
+            <p key={i} className="text-lg md:text-xl text-neutral-400 leading-relaxed">{p}</p>
+          ))}
+        </div>
+        <img
+          src="https://cdn.poehali.dev/projects/6ff344d6-fee3-4221-bb5d-9c00d540a2b9/bucket/1bc45d29-48e6-4a92-90dd-1dd5143a0063.png"
+          alt="О проекте"
+          className="rounded-2xl border border-neutral-700 w-full object-cover aspect-square"
+        />
       </div>
     </motion.div>
   )
