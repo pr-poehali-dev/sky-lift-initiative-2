@@ -101,7 +101,7 @@ function ListPage() {
               allowFullScreen
             />
           </div>
-          <p className="text-center text-neutral-400 text-lg italic">Встретимся снова</p>
+          <p className="text-center text-neutral-400 text-lg italic">Встретимся снова !?</p>
         </div>
       </div>
     </motion.div>
