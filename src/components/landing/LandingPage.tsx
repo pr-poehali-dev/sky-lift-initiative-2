@@ -42,33 +42,27 @@ function AboutPage() {
 function GalleryPage() {
   return (
     <motion.div {...fade} transition={{ duration: 0.5 }} className="max-w-5xl mx-auto w-full">
-      <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-8">Галерея</h2>
-      <div className="grid md:grid-cols-2 gap-10 items-start">
-        <img
-          src={galleryImage}
-          alt="Фотография проекта"
-          className="rounded-2xl border border-neutral-700 w-full object-cover aspect-square"
-        />
-        <div className="rounded-2xl border border-neutral-700 overflow-hidden">
-          <table className="w-full text-left">
-            <thead>
-              <tr className="bg-white/5">
-                {tableData.headers.map((h) => (
-                  <th key={h} className="px-4 py-3 text-white font-semibold text-sm md:text-base">{h}</th>
+      <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-4">О себе</h2>
+      <p className="text-neutral-400 text-lg mb-8 italic">Один день ИСПэшника</p>
+      <div className="rounded-2xl border border-neutral-700 overflow-x-auto">
+        <table className="w-full text-left min-w-[800px]">
+          <thead>
+            <tr className="bg-white/5">
+              {tableData.headers.map((h) => (
+                <th key={h} className="px-4 py-3 text-white font-semibold text-sm">{h}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {tableData.rows.map((row, i) => (
+              <tr key={i} className="border-t border-neutral-800">
+                {row.map((cell, j) => (
+                  <td key={j} className="px-4 py-3 text-neutral-300 text-sm">{cell}</td>
                 ))}
               </tr>
-            </thead>
-            <tbody>
-              {tableData.rows.map((row, i) => (
-                <tr key={i} className="border-t border-neutral-800">
-                  {row.map((cell, j) => (
-                    <td key={j} className="px-4 py-3 text-neutral-300 text-sm md:text-base">{cell}</td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+            ))}
+          </tbody>
+        </table>
       </div>
     </motion.div>
   )
