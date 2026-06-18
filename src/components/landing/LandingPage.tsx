@@ -25,9 +25,12 @@ function AboutPage() {
       <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-8">О проекте</h2>
       <div className="grid md:grid-cols-2 gap-10 items-center">
         <div className="space-y-5">
-          {aboutText.map((p, i) => (
-            <p key={i} className="text-lg md:text-xl text-neutral-400 leading-relaxed">{p}</p>
-          ))}
+          <p className="text-lg md:text-xl text-neutral-400 leading-relaxed">
+            Этот сайт создан в качестве учебного сайта. Его цель — показать умение работать с современными веб-технологиями:{' '}
+            <a href="https://ru.wikipedia.org/wiki/%D0%92%D1%91%D1%80%D1%81%D1%82%D0%BA%D0%B0" target="_blank" rel="noopener noreferrer" className="text-[#FF4D00] hover:underline">вёрсткой</a>
+            , анимациями и немного с мемами.
+          </p>
+          <p className="text-lg md:text-xl text-neutral-400 leading-relaxed">{aboutText[1]}</p>
         </div>
         <img
           src="https://cdn.poehali.dev/projects/6ff344d6-fee3-4221-bb5d-9c00d540a2b9/bucket/1bc45d29-48e6-4a92-90dd-1dd5143a0063.png"
